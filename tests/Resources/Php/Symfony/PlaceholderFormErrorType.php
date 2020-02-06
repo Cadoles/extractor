@@ -23,6 +23,22 @@ class PlaceholderFormErrorType extends AbstractType
             ->add('field_placeholder', 'choice', array(
                 'placeholder' => $string
             ))
+            ->add('field_array_placeholder', 'choice', array(
+                'placeholder' => [
+                    'year' => $string,
+                    'month' => $string,
+                    'day' => $string
+                ]
+            ))
+            ->add('field_attr_array_placeholder', 'choice', array(
+                'attr' => array(
+                    'placeholder' => [
+                        'year' => $string,
+                        'month' => $string,
+                        'day' => $string
+                    ]
+                )
+            ))
             ->add('field_placeholder_ignore2', 'choice', array(
                 /** @Ignore */
                 'placeholder' => $string

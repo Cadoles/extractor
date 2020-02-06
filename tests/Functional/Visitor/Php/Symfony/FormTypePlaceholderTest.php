@@ -26,10 +26,16 @@ final class FormTypePlaceholderTest extends BasePHPVisitorTest
         $collection = $this->getSourceLocations(new FormTypePlaceholder(),
             Resources\Php\Symfony\PlaceholderFormType::class);
 
-        $this->assertCount(3, $collection);
+        $this->assertCount(9, $collection);
         $this->assertEquals('form.placeholder.text', $collection->get(0)->getMessage());
         $this->assertEquals('form.placeholder.text.but.no.label', $collection->get(1)->getMessage());
         $this->assertEquals('form.choice_placeholder', $collection->get(2)->getMessage());
+        $this->assertEquals('form.datetime_array_year_placeholder', $collection->get(3)->getMessage());
+        $this->assertEquals('form.datetime_array_month_placeholder', $collection->get(4)->getMessage());
+        $this->assertEquals('form.datetime_array_day_placeholder', $collection->get(5)->getMessage());
+        $this->assertEquals('form.datetime_attr_array_year_placeholder', $collection->get(6)->getMessage());
+        $this->assertEquals('form.datetime_attr_array_month_placeholder', $collection->get(7)->getMessage());
+        $this->assertEquals('form.datetime_attr_array_day_placeholder', $collection->get(8)->getMessage());
     }
 
     public function testExtractError()
@@ -38,7 +44,7 @@ final class FormTypePlaceholderTest extends BasePHPVisitorTest
             Resources\Php\Symfony\PlaceholderFormErrorType::class);
 
         $errors = $collection->getErrors();
-        $this->assertCount(3, $errors);
+        $this->assertCount(9, $errors);
     }
 
     public function testChildVisitationNotBlocked()
